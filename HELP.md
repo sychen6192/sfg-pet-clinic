@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'guru.springframework.sfg-pet-clinic' is invalid and this project uses 'guru.springframework.sfg_pet_clinic' instead.
+* The original package name 'guru.springframework.sfg-pet-clinic' is invalid and this project uses 'guru.springframework.sfgpetclinic' instead.
 
 # Getting Started
 

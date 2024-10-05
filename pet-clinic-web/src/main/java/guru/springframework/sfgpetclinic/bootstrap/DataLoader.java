@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 import guru.springframework.sfgpetclinic.model.Owner;
 import guru.springframework.sfgpetclinic.model.Vet;
 
+import java.time.LocalDate;
+
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -38,12 +40,33 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("123 Brickerel");
+        owner1.setCity("Miami");
+        owner1.setTelephone("1231231234");
+
+        Pet mikePet = new Pet();
+        mikePet.setPetType(saveDogPetType);
+        mikePet.setOwner(owner1);
+        mikePet.setBirthDate(LocalDate.now());
+        mikePet.setName("Rosco");
+        owner1.getPets().add(mikePet);
         ownerService.save(owner1);
+
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("123 Brickerel");
+        owner2.setCity("Miami");
+        owner2.setTelephone("1231231234");
+
+        Pet fionaCat = new Pet();
+        fionaCat.setPetType(saveCatPetType);
+        fionaCat.setOwner(owner2);
+        fionaCat.setBirthDate(LocalDate.now());
+        fionaCat.setName("CAT");
+        owner2  .getPets().add(fionaCat);
         ownerService.save(owner2);
-        System.out.println("Loaded Owners....");
+
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
